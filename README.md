@@ -15,7 +15,6 @@ This image needs an IAM user with valid permissions in order to run, by default 
 and will send the following metrics:
 
 - Memory utilized in percentages
-- Memory that is cached and in buffers as used
 - Disk space utilized in percentages
 
 > `docker run dubit/cloud-watch-mon-cron -e AWS_ACCESS_KEY='xxxxxxxx' -e AWS_SECRET_KEY='xxxxxxx'`
@@ -40,7 +39,7 @@ For example to run the script once a day:
 
 ### Script arguments
 
-Amazon's perl scripts can be configured with command line arguments, for ease of use the default arguments run with the `mon-put-instance-data.pl` script are `--mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/`
+Amazon's perl scripts can be configured with command line arguments, for ease of use the default arguments run with the `mon-put-instance-data.pl` script are `--mem-util --disk-space-util --disk-path=/`
 
 The arguments can be overriden by specifiying them in the `MONITOR_ARGUMENTS` env var.
 
