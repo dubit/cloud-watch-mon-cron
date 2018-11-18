@@ -1,10 +1,11 @@
 FROM alpine:3.8
 
-# Install perl to run the aws scripts
+# Install perl and coreutils (for a compatible df) to run the aws scripts
 RUN apk add perl && \
     apk add perl-libwww && \
     apk add perl-lwp-protocol-https && \
-    apk add perl-datetime
+    apk add perl-datetime && \
+    apk -U add coreutils
 
 # Install envsubst
 RUN apk add --update libintl && \
